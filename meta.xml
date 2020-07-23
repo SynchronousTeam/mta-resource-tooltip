@@ -1,0 +1,11 @@
+<meta>
+    
+    <!--TOOLTIPS-->
+    <!--Scripts Tooltip GUI Connection-->
+    <script src="TooltipBrowser.lua" type="client"></script>
+    <script src="TooltipBackend.lua" type="server"></script>
+    <!--Import of HTML, CSS and JS Files-->
+    <file src="src/tooltip.html"></file>
+    <!--CSS-->
+    <file src="src/css/Tooltip.css"></file>
+</meta>
