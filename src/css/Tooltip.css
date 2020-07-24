@@ -16,14 +16,12 @@
 ---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
 */
 
-body {
-  background-color: white;
-}
+
 
 .error {
   position: absolute;
-  top: 43.8%;
-  left: 58%;
+  top: 0%;
+  left: 0%;
   padding: 0.5% 3.1%;
   border-radius: 3px;
   background-color: #fdcac4;

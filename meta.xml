@@ -1,5 +1,4 @@
 <meta>
-    
     <!--TOOLTIPS-->
     <!--Scripts Tooltip GUI Connection-->
     <script src="TooltipBrowser.lua" type="client"></script>
@@ -7,5 +6,10 @@
     <!--Import of HTML, CSS and JS Files-->
     <file src="src/tooltip.html"></file>
     <!--CSS-->
-    <file src="src/css/Tooltip.css"></file>
+    <file src="src/css/Tooltip.css"></file>    
+    <file src="src/css/Body.css"></file>
+    <!--Import of respective files Fonts - CSS-->
+    <file src="src/css/Titillium-Web.css"></file>
+    <file src="src/fonts/TitilliumWeb-Bold.ttf"></file>
+    <download_priority_group>1</download_priority_group>
 </meta>
