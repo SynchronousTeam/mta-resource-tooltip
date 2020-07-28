@@ -16,11 +16,16 @@ dgsSetVisible(DGS_WINDOW_TOOLTIP, false) -- Hidde the DGS Window (global)
 dgsSetFont(DGS_WINDOW_TOOLTIP, "default-bold") -- Bold Font (global)
 ---Functions
 function createBrowserTooltipGUI()
-    dgsSetVisible(DGS_WINDOW_TOOLTIP, true)
-    loadBrowserURL(BROWSER_TOOLTIP, URL_PAGE_TOOLTIP)
+    addEventHandler("onClientBrowserCreated", BROWSER_TOOLTIP, function()
+        dgsSetVisible(DGS_WINDOW_TOOLTIP, true)
+        loadBrowserURL(BROWSER_TOOLTIP, URL_PAGE_TOOLTIP)
+    end)
 end
 
-function deleteBrowserTooltipGUI() dgsSetVisible(DGS_WINDOW_TOOLTIP, false) end -- This function removes the Browser GUI
+function deleteBrowserTooltipGUI()
+    addEventHandler("onClientBrowserCreated", BROWSER_TOOLTIP,
+                    function() dgsSetVisible(DGS_WINDOW_TOOLTIP, false) end)
+end -- This function removes the Browser GUI
 
 function showTooltipError(message)
     if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
