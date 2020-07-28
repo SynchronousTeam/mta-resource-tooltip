@@ -16,18 +16,21 @@
 ---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
 */
 
-
+.container_tooltip {
+  text-align: center !important;
+  background-color: none !important;
+}
 
 .error {
-  position: absolute;
-  top: 0%;
+  position: relative;
+  top: 95%;
   left: 0%;
   padding: 0.5% 3.1%;
   border-radius: 3px;
   background-color: #fdcac4;
   color: #ed6160;
   font-size: 13px;
-  display: initial;
+  display: none;
 } /*Create the base to the Error Tooltip*/
 
 .error::before {
@@ -43,8 +46,6 @@
 } /*Add a triangle for the Error Tooltip*/
 
 .error:nth-child(2) {
-  top: 90%;
-  left: 44.8%;
   background-color: #d8fdc4;
   color: #77d2a2;
   font-size: 13px;
@@ -60,8 +61,6 @@
 
 .error:nth-child(3) {
   padding: 0.5% 2.8%;
-  top: 80%;
-  left: 44.8%;
   background-color: #ffe085;
   color: #e3be53;
   font-size: 13px;
@@ -77,8 +76,6 @@
 
 .error:nth-child(4) {
   padding: 0.5% 3.5%;
-  top: 85%;
-  left: 44.8%;
   background-color: #c4d0fd;
   color: #7791d2;
   font-size: 13px;
@@ -94,8 +91,6 @@
 
 .error:nth-child(5) {
   padding: 0.5% 2.4%;
-  top: 75%;
-  left: 44.8%;
   background-color: #fdcac4;
   color: #ed6160;
   font-size: 13px;

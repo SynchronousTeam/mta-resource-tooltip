@@ -16,15 +16,16 @@
 ---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
 */
 body {
-  font-family: "Titillium Web", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 90vh;
-  font-size: 1.5rem;
-  margin: 0px;
-  padding: 0px;
+  font-family: "Titillium Web", sans-serif !important;
+  background-color: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-content: center !important;
+  min-height: 90vh !important;
+  font-size: 2.1rem !important;
+  margin: 0px !important;
+  padding: 0px !important;
 
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */

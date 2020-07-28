@@ -2,36 +2,74 @@
 event = {add = addEventHandler, load = addEvent, execute = triggerServerEvent} -- Make simple calls for addEvent and triggerServerEvent by the variable event
 loadstring(exports.dgs:dgsImportFunction())() -- Load all the functions from the DGS Resource
 --- GUI Init
-local URL_PAGE = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
-local DGS_WINDOW = dgsCreateWindow(0.21, 0.20, 0.45, 0.45, "Tooltip", true, nil,
-                                   nil, nil, nil, nil, tocolor(0, 0, 0, 0)) -- Create a Window Canvas using DGS (global)
-local BROWSER = dgsCreateBrowser(0, 0, 1, 1, true, DGS_WINDOW, true, true) -- Create the Browser (global)
+URL_PAGE_TOOLTIP = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
+DGS_WINDOW_TOOLTIP = dgsCreateWindow(0.21, 0, 0.25, 0.12, "Tooltip", true, nil,
+                                     0, nil, nil, nil, tocolor(0, 0, 0, 0)) -- Create a Window Canvas using DGS (global)
+BROWSER_TOOLTIP = dgsCreateBrowser(0, 0, 1, 1, true, DGS_WINDOW_TOOLTIP, true,
+                                   true) -- Create the Browser (global)
 --- GUI Parameters
-dgsCenterElement(DGS_WINDOW) -- Center the DGS Window on the Screen (global)
-loadBrowserURL(BROWSER, URL_PAGE)
+dgsSetPosition(DGS_WINDOW_TOOLTIP, 0.5, 0.988, true, true) -- Center the DGS Window on the Screen (global)
+dgsWindowSetSizable(DGS_WINDOW_TOOLTIP, false) -- Does the Window not Sizable (global)
+dgsWindowSetMovable(DGS_WINDOW_TOOLTIP, false) -- Does the Window not Movable (global)
+dgsWindowSetCloseButtonEnabled(DGS_WINDOW_TOOLTIP, false) -- Hidde the Close Window Button (global)
+dgsSetVisible(DGS_WINDOW_TOOLTIP, false) -- Hidde the DGS Window (global)
+dgsSetFont(DGS_WINDOW_TOOLTIP, "default-bold") -- Bold Font (global)
 ---Functions
-function createTooltipBrowserGUI()
-    if not isElement(DGS_WINDOW) then
-        DGS_WINDOW = dgsCreateWindow(0.21, 0.20, 0.45, 0.45, "Tooltip", true,
-                                     nil, nil, nil, nil, nil,
-                                     tocolor(0, 0, 0, 0))
-        BROWSER = dgsCreateBrowser(0, 0, 1, 1, true, DGS_WINDOW, true, true)
+function createBrowserTooltipGUI()
+    dgsSetVisible(DGS_WINDOW_TOOLTIP, true)
+    loadBrowserURL(BROWSER_TOOLTIP, URL_PAGE_TOOLTIP)
+end
+
+function deleteBrowserTooltipGUI() dgsSetVisible(DGS_WINDOW_TOOLTIP, false) end -- This function removes the Browser GUI
+
+function showTooltipError(message)
+    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+        createBrowserTooltipGUI()
+        setTimer(function() deleteBrowserTooltipGUI() end, 9500, 1)
     end
-
-    loadBrowserURL(BROWSER, URL_PAGE)
+    setTimer(function()
+        executeBrowserJavascript(BROWSER_TOOLTIP,
+                                 "document.querySelector('.error:nth-child(5)').innerHTML = '" ..
+                                     message ..
+                                     "'; document.querySelector('.error:nth-child(5)').style = 'display: initial'");
+    end, 500, 1)
 end
 
-function tooltipLabelError(message)
-    executeBrowserJavascript(BROWSER,
-                             "document.querySelector('.error:nth-child(5)').innerHTML = '" ..
-                                 message ..
-                                 "'; document.querySelector('.error:nth-child(5)').style = 'display: initial; top: 0%; left:0.5%'");
+function showTooltipWarning(message)
+    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+        createBrowserTooltipGUI()
+        setTimer(function() deleteBrowserTooltipGUI() end, 9500, 1)
+    end
+    setTimer(function()
+        executeBrowserJavascript(BROWSER_TOOLTIP,
+                                 "document.querySelector('.error:nth-child(3)').innerHTML = '" ..
+                                     message ..
+                                     "'; document.querySelector('.error:nth-child(3)').style = 'display: initial'");
+    end, 500, 1)
 end
---- Mta Events
-event.load('tooltip-browser:show', true)
-event.add('tooltip-browser:show', root,
-          function() createTooltipBrowserGUI() end, true)
 
-event.load('tooltip-label-error:show', true)
-event.add('tooltip-label-error:show', root,
-          function(message) tooltipLabelError(message) end, true)
+function showTooltipInfo(message)
+    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+        createBrowserTooltipGUI()
+        setTimer(function() deleteBrowserTooltipGUI() end, 9500, 1)
+    end
+    setTimer(function()
+        executeBrowserJavascript(BROWSER_TOOLTIP,
+                                 "document.querySelector('.error:nth-child(4)').innerHTML = '" ..
+                                     message ..
+                                     "'; document.querySelector('.error:nth-child(4)').style = 'display: initial'");
+    end, 500, 1)
+end
+
+function showTooltipSucces(message)
+    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+        createBrowserTooltipGUI()
+        setTimer(function() deleteBrowserTooltipGUI() end, 9500, 1)
+    end
+    setTimer(function()
+        executeBrowserJavascript(BROWSER_TOOLTIP,
+                                 "document.querySelector('.error:nth-child(2)').innerHTML = '" ..
+                                     message ..
+                                     "'; document.querySelector('.error:nth-child(2)').style = 'display: initial'");
+    end, 500, 1)
+end
