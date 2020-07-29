@@ -16,7 +16,7 @@
 ---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
 */
 body {
-  font-family: "Titillium Web", sans-serif !important;
+  font-family: "Titillium Web" !important;
   background-color: none !important;
   display: flex !important;
   flex-direction: column !important;
