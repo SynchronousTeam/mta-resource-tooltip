@@ -1,7 +1,7 @@
 --- Client Variables
 event = {add = addEventHandler, load = addEvent, execute = triggerServerEvent} -- Make simple calls for addEvent and triggerServerEvent by the variable event
 loadstring(exports.dgs:dgsImportFunction())() -- Load all the functions from the DGS Resource
-const = {
+local const = {
     position = {X_WINDOW = 0.5, Y_WINDOW = 0.988, NONE = 0},
     size = {
         W_WINDOW = 0.25,
@@ -13,13 +13,13 @@ const = {
     time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 9500}
 }
 --- GUI Init
-URL_PAGE_TOOLTIP = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
-DGS_WINDOW_TOOLTIP = dgsCreateWindow(const.position.NONE, const.position.NONE,
+local URL_PAGE_TOOLTIP = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
+local DGS_WINDOW_TOOLTIP = dgsCreateWindow(const.position.NONE, const.position.NONE,
                                      const.size.W_WINDOW, const.size.H_WINDOW,
                                      "Tooltip", true, nil,
                                      const.size.TITLE_SIZE, nil, nil, nil,
                                      tocolor(0, 0, 0, 0)) -- Create a Window Canvas using DGS (global)
-BROWSER_TOOLTIP = dgsCreateBrowser(const.position.NONE, const.position.NONE,
+local BROWSER_TOOLTIP = dgsCreateBrowser(const.position.NONE, const.position.NONE,
                                    const.size.W_BROWSER, const.size.H_BROWSER,
                                    true, DGS_WINDOW_TOOLTIP, true, true) -- Create the Browser (global)
 --- GUI Parameters
