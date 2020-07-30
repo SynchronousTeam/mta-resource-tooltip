@@ -13,7 +13,7 @@
     <file src="src/css/Titillium-Web.css"></file>
     <file src="src/fonts/TitilliumWeb-Bold.ttf"></file>
     <!--Export Tooltip Functions-->
-    <export function="showTooltipError" type="client"></export>
+    <export function="showTooltip" type="client"></export>
     <export function="showTooltipWarning" type="client"></export>
     <export function="showTooltipInfo" type="client"></export>
     <export function="showTooltipSucces" type="client"></export>

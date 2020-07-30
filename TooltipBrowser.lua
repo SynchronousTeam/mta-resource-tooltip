@@ -10,18 +10,23 @@ local const = {
         H_BROWSER = 1,
         TITLE_SIZE = 0
     },
-    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 9500}
+    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 9500},
+    type = {SUCCES = "2", WARNING = "3", INFO = "4", ERROR = "5"}
 }
+
 --- GUI Init
 local URL_PAGE_TOOLTIP = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
-local DGS_WINDOW_TOOLTIP = dgsCreateWindow(const.position.NONE, const.position.NONE,
-                                     const.size.W_WINDOW, const.size.H_WINDOW,
-                                     "Tooltip", true, nil,
-                                     const.size.TITLE_SIZE, nil, nil, nil,
-                                     tocolor(0, 0, 0, 0)) -- Create a Window Canvas using DGS (global)
-local BROWSER_TOOLTIP = dgsCreateBrowser(const.position.NONE, const.position.NONE,
-                                   const.size.W_BROWSER, const.size.H_BROWSER,
-                                   true, DGS_WINDOW_TOOLTIP, true, true) -- Create the Browser (global)
+local DGS_WINDOW_TOOLTIP = dgsCreateWindow(const.position.NONE,
+                                           const.position.NONE,
+                                           const.size.W_WINDOW,
+                                           const.size.H_WINDOW, "Tooltip", true,
+                                           nil, const.size.TITLE_SIZE, nil, nil,
+                                           nil, tocolor(0, 0, 0, 0)) -- Create a Window Canvas using DGS (global)
+local BROWSER_TOOLTIP = dgsCreateBrowser(const.position.NONE,
+                                         const.position.NONE,
+                                         const.size.W_BROWSER,
+                                         const.size.H_BROWSER, true,
+                                         DGS_WINDOW_TOOLTIP, true, true) -- Create the Browser (global)
 --- GUI Parameters
 dgsSetPosition(DGS_WINDOW_TOOLTIP, const.position.X_WINDOW,
                const.position.Y_WINDOW, true, true) -- Center the DGS Window on the Screen (global)
@@ -42,7 +47,7 @@ function deleteBrowserTooltipGUI()
     end
 end -- This function removes the Browser GUI
 
-function showTooltipError(message)
+function showTooltip(message, type_tooltip)
     if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
         createBrowserTooltipGUI()
         setTimer(function() deleteBrowserTooltipGUI() end,
