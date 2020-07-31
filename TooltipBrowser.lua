@@ -44,6 +44,7 @@ function deleteBrowserTooltipGUI()
 end -- This function removes the Browser GUI
 
 function sendScriptBrowserTooltip(message, type_tooltip)
+    -- FIXME: Try to get the size of the Constructor
     outputConsole("Size: " .. table.getn(const))
     for i = 1, table.getn(const.type) do
         outputConsole("Number: " .. i .. " Type: " .. const.type[type_tooltip])
