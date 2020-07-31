@@ -10,7 +10,7 @@ const = {
         H_BROWSER = 1,
         TITLE_SIZE = 0
     },
-    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 9500},
+    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 3500},
     type = {SUCCES = "2", WARNING = "3", INFO = "4", ERROR = "5"}
 }
 --- GUI Init
@@ -43,21 +43,48 @@ function deleteBrowserTooltipGUI()
     end
 end -- This function removes the Browser GUI
 
+function sendScriptBrowserTooltip(message, type_tooltip)
+    outputConsole("Size: " .. table.getn(const))
+    for i = 1, table.getn(const.type) do
+        outputConsole("Number: " .. i .. " Type: " .. const.type[type_tooltip])
+        if not i == tonumber(const.type[type_tooltip]) then
+            outputConsole("Removing: " .. i)
+            executeBrowserJavascript(BROWSER_TOOLTIP,
+                                     "document.querySelector('.error:nth-child(" ..
+                                         i .. ")').style = 'display: none'")
+        end
+    end
+    executeBrowserJavascript(BROWSER_TOOLTIP,
+                             "document.querySelector('.error:nth-child(" ..
+                                 const.type[type_tooltip] .. ")').innerHTML = '" ..
+                                 message ..
+                                 "'; document.querySelector('.error:nth-child(" ..
+                                 const.type[type_tooltip] ..
+                                 ")').style = 'display: initial'")
+end
+
 function showTooltip(message, type_tooltip)
+    if dgsGetVisible(DGS_WINDOW_TOOLTIP) then end
+    sendScriptBrowserTooltip(message, type_tooltip)
+    setTimer(function()
+        if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+            setTimer(function() deleteBrowserTooltipGUI() end,
+                     const.time.TOOLTIP_DURATION, 1)
+        end
+    end, 6000, 1)
     if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
         createBrowserTooltipGUI()
-        setTimer(function() deleteBrowserTooltipGUI() end,
-                 const.time.TOOLTIP_DURATION, 1)
+        setTimer(function()
+            sendScriptBrowserTooltip(message, type_tooltip)
+            setTimer(function()
+                if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+                    setTimer(function()
+                        deleteBrowserTooltipGUI()
+                    end, const.time.TOOLTIP_DURATION, 1)
+                end
+            end, 6000, 1)
+        end, const.time.LOAD_DELAY, 1)
     end
-    setTimer(function()
-        executeBrowserJavascript(BROWSER_TOOLTIP,
-                                 "document.querySelector('.error:nth-child(" ..
-                                     const.type[type_tooltip] ..
-                                     ")').innerHTML = '" .. message ..
-                                     "'; document.querySelector('.error:nth-child(" ..
-                                     const.type[type_tooltip] ..
-                                     ")').style = 'display: initial'");
-    end, const.time.LOAD_DELAY, 1)
 end
 
 function showTooltipWarning(message)
