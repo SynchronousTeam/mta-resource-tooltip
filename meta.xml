@@ -3,7 +3,6 @@
     <!--TOOLTIPS-->
     <!--Scripts Tooltip GUI Connection-->
     <script src="TooltipBrowser.lua" type="client"></script>
-    <script src="TooltipBackend.lua" type="server"></script>
     <!--Import of HTML, CSS and JS Files-->
     <file src="src/tooltip.html"></file>
     <!--CSS-->
@@ -13,7 +12,7 @@
     <file src="src/css/Titillium-Web.css"></file>
     <file src="src/fonts/TitilliumWeb-Bold.ttf"></file>
     <!--Export Tooltip Functions-->
-    <export function="showTooltipError" type="client"></export>
+    <export function="showTooltip" type="client"></export>
     <export function="showTooltipWarning" type="client"></export>
     <export function="showTooltipInfo" type="client"></export>
     <export function="showTooltipSucces" type="client"></export>
