@@ -10,9 +10,11 @@ const = {
         H_BROWSER = 1,
         TITLE_SIZE = 0
     },
-    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 3500}
+    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 3500},
+    type = {SUCCES = "2", WARNING = "3", INFO = "4", ERROR = "5"}
 }
-type = {SUCCES = "2", WARNING = "3", INFO = "4", ERROR = "5"}
+
+type = {"2", "3", "4", "5"}
 --- GUI Init
 URL_PAGE_TOOLTIP = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
 DGS_WINDOW_TOOLTIP = dgsCreateWindow(const.position.NONE, const.position.NONE,
@@ -45,10 +47,10 @@ end -- This function removes the Browser GUI
 
 function sendScriptBrowserTooltip(message, type_tooltip)
     -- FIXME: Try to get the size of the Constructor   
-    outputConsole("Working" .. table.getn(type))
-    for i = 1, table.getn(type) do
-        outputConsole("Number: " .. i .. " Type: " .. type[type_tooltip])
-        if not i == tonumber(type[type_tooltip]) then
+    outputConsole("Working " .. table.getn(type))
+    for i = 1, table.getn(const.type) do
+        outputConsole("Number: " .. i .. " Type: " .. const.type[type_tooltip])
+        if not i == tonumber(const.type[type_tooltip]) then
             outputConsole("Removing: " .. i)
             executeBrowserJavascript(BROWSER_TOOLTIP,
                                      "document.querySelector('.error:nth-child(" ..
@@ -57,10 +59,10 @@ function sendScriptBrowserTooltip(message, type_tooltip)
     end
     executeBrowserJavascript(BROWSER_TOOLTIP,
                              "document.querySelector('.error:nth-child(" ..
-                                 type[type_tooltip] .. ")').innerHTML = '" ..
+                                 const.type[type_tooltip] .. ")').innerHTML = '" ..
                                  message ..
                                  "'; document.querySelector('.error:nth-child(" ..
-                                 type[type_tooltip] ..
+                                 const.type[type_tooltip] ..
                                  ")').style = 'display: initial'")
 end
 
