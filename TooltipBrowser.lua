@@ -47,7 +47,13 @@ end -- This function removes the Browser GUI
 
 function sendScriptBrowserTooltip(message, type_tooltip)
     -- FIXME: Try to get the size of the Constructor   
-    outputConsole("Working " .. table.getn(type))
+    outputConsole("Working " ..
+                      table.getn({
+            SUCCES = "2",
+            WARNING = "3",
+            INFO = "4",
+            ERROR = "5"
+        }))
     for i = 1, table.getn(const.type) do
         outputConsole("Number: " .. i .. " Type: " .. const.type[type_tooltip])
         if not i == tonumber(const.type[type_tooltip]) then
