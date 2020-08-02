@@ -52,7 +52,8 @@ function sendScriptBrowserTooltip(message, type_tooltip)
             SUCCES = "2",
             WARNING = "3",
             INFO = "4",
-            ERROR = "5"
+            ERROR = "5",
+            "0"
         }))
     for i = 1, table.getn(const.type) do
         outputConsole("Number: " .. i .. " Type: " .. const.type[type_tooltip])
