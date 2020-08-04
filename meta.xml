@@ -13,8 +13,5 @@
     <file src="src/fonts/TitilliumWeb-Bold.ttf"></file>
     <!--Export Tooltip Functions-->
     <export function="showTooltip" type="client"></export>
-    <export function="showTooltipWarning" type="client"></export>
-    <export function="showTooltipInfo" type="client"></export>
-    <export function="showTooltipSucces" type="client"></export>
     <export function="deleteBrowserTooltipGUI" type="client"></export>
 </meta>
