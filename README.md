@@ -25,15 +25,41 @@
 
 ---
 
-**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is show the Initial MTA Game Server Screen where you can Login, Create an account and See your profile stats, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz members of Synchronous**.
+**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Player Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
 
-This resource is still on develop so many code lines are going to disappear, at the moment only the **Login** is finished.
+This resource is still on develop so many code lines are going to change.
 
-#### On Develop
+### How to Use
 
-This resource is not ready yet, we are working on it, if you want to see our advance **Follow the repository**.
+On the **meta.xml** file, the Resource exports a function that we can call from another Resource.
 
-## Developers
+```lua
+    --- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
+    exports["[tooltip]"]:showTooltip(message,type_tooltip)
+```
+
+To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource _(Make sure that the lua file on the meta.xml call is type="Client")_.
+
+```lua
+    --- Where resource Is the name of the new Resource, message is Any text that you want to show and the type_tooltip is the Type of the Tooltip Message
+    addEvent("resource-tooltip-browser:show", true)
+    addeEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
+        resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
+    end, true)
+```
+
+## Types of Tooltips
+
+You can show different Types of Tooltips with this resource, at the moment you can show _4 types_.
+
+| Type      | Description          |
+| --------- | -------------------- |
+| "SUCCES"  | Green color Message  |
+| "INFO"    | Blue color Message   |
+| "WARNING" | Yellow color Message |
+| "ERRROR"  | Red color Message    |
+
+## Developer
 
 **Synchronous Developers** are working on this repository, if you want know a little more about the team, you can follow them on their each social media.
 
