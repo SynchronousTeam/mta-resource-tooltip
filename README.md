@@ -52,18 +52,16 @@ end, true)
 # Example
 
 ```lua
-    -- clientFile.lua
-    addEvent("serverFile-tooltip-browser:show", true)
-    addEventHandler("serverFile-tooltip-browser:show", root, function()
-        init_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
-    end,true)
+-- clientFile.lua
+addEvent("serverFile-tooltip-browser:show", true)
+addEventHandler("serverFile-tooltip-browser:show", root, function()
+    init_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
+end,true)
 
-    -- serverFile.lua
-    triggerClientEvent(client,"serverFile-tooltip-browser:show",client, "All the resource works Fine!", "SUCCES")
-    triggerClientEvent(client,"serveerFile-tooltip-browser:show",client,"Follow me on Twitter @Synk_Kyonax", "INFO")
+-- serverFile.lua
+triggerClientEvent(client,"serverFile-tooltip-browser:show",client, "All the resource works Fine!", "SUCCES")
+triggerClientEvent(client,"serveerFile-tooltip-browser:show",client,"Follow me on Twitter @Synk_Kyonax", "INFO")
 ```
-
-_If You are using JavaScript_
 
 <div>
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Succes.png">
@@ -72,10 +70,12 @@ _If You are using JavaScript_
 <br>
 </div>
 
+_If You are using JavaScript_
+
 ```js
 mta.triggerEvent(
   "serverFile-tooltip-browser:show",
-  "I'm Using JavaScript!!!",
+  "Im Using JavaScript!!!",
   "WARNING"
 );
 ```

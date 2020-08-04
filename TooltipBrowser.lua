@@ -19,7 +19,8 @@ const = {
         "1",
         "2",
         "3",
-        "4"
+        "4",
+        "5"
     } -- Types of Tooltips 
 } -- Lua Constructor for easy acces and Variable storage
 --- GUI Init
@@ -53,8 +54,8 @@ function deleteBrowserTooltipGUI()
 end -- Removing GUI Function | Hidde the DGS Window when this is Visible
 
 function sendScriptBrowserTooltip(message, type_tooltip)
-    for i = 1, table.getn(const.type) do
-        if not i == tonumber(const.type[type_tooltip]) then
+    for i = 2, table.getn(const.type) do
+        if i ~= tonumber(const.type[type_tooltip]) then
             executeBrowserJavascript(BROWSER_TOOLTIP,
                                      "document.querySelector('.error:nth-child(" ..
                                          i .. ")').style = 'display: none'")
@@ -77,9 +78,9 @@ function showTooltip(message, type_tooltip)
     setTimer(function()
         if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
             setTimer(function() deleteBrowserTooltipGUI() end,
-                     const.time.TOOLTIP_DURATION, 1)
+                     const.time.TOOLTIP_STOPWATCH, 1)
         end
-    end, TOOLTIP_STOPWATCH, 1)
+    end, const.time.TOOLTIP_STOPWATCH, 1)
     if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
         createBrowserTooltipGUI()
         setTimer(function()
@@ -88,9 +89,9 @@ function showTooltip(message, type_tooltip)
                 if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
                     setTimer(function()
                         deleteBrowserTooltipGUI()
-                    end, const.time.TOOLTIP_DURATION, 1)
+                    end, const.time.TOOLTIP_STOPWATCH, 1)
                 end
-            end, TOOLTIP_STOPWATCH, 1)
+            end, const.time.TOOLTIP_STOPWATCH, 1)
         end, const.time.LOAD_DELAY, 1)
     end
 end -- Validate all the Posible Window Visible Status and execute the Script
