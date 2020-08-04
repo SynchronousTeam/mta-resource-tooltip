@@ -3,17 +3,17 @@
 <p align="center">
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
-<a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
-<img src="https://img.shields.io/github/license/SynchronousTeam/mta-resource-init">
+<a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
+<img src="https://img.shields.io/github/license/SynchronousTeam/mta-resource-tooltip">
 </a>
-<a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
-<img src="https://img.shields.io/github/languages/count/SynchronousTeam/mta-resource-init">
+<a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
+<img src="https://img.shields.io/github/languages/count/SynchronousTeam/mta-resource-tooltip">
 </a>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5LY2Y46Q7DSWL&source=url"style="text-decoration: none">
 <img src="https://img.shields.io/badge/Donate-PayPal-green.svg">
 </a>
-<a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
-<img src="https://img.shields.io/github/repo-size/SynchronousTeam/mta-resource-init">
+<a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
+<img src="https://img.shields.io/github/repo-size/SynchronousTeam/mta-resource-tooltip">
 </a>
 <a href="https://www.facebook.com/SynchronousTeam"style="text-decoration: none">
 <img src="https://img.shields.io/badge/Synchronous-facebook-blue">
@@ -25,11 +25,11 @@
 
 ---
 
-**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Player Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
+**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Client Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
 
-This resource is still on develop so many code lines are going to change.
+_This resource is still on develop so many code lines are going to change._
 
-### How to Use
+## How to Use
 
 On the **meta.xml** file, the Resource exports a function that we can call from another Resource.
 
@@ -49,7 +49,7 @@ addEventHandler("resource-tooltip-browser:show", root, function(message, type_to
 end, true)
 ```
 
-# Example
+### Example
 
 ```lua
 -- clientFile.lua
