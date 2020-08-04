@@ -73,6 +73,7 @@ function sendScriptBrowserTooltip(message, type_tooltip)
 end -- Send a JavaScript instruction to the Browser | This Instruction deletes the previous Tooltips and Show a new one
 
 function showTooltip(message, type_tooltip)
+    --- FIXME: Time problems
     if dgsGetVisible(DGS_WINDOW_TOOLTIP) then end
     sendScriptBrowserTooltip(message, type_tooltip)
     setTimer(function()

@@ -1,4 +1,4 @@
-# Resource Init
+# Resource Tooltip
 
 <p align="center">
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
