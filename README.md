@@ -56,7 +56,7 @@ You can show different Types of Tooltips with this resource, **_4 types_** at th
 | Type      | Description                                           |
 | --------- | ----------------------------------------------------- |
 | "SUCCES"  | <a style="color:LightGreen">Green color Message</a>   |
-| "INFO"    | <a style="color:LightBlue">Blue color Message</>      |
+| "INFO"    | <a style="color:LightBlue">Blue color Message</a>      |
 | "WARNING" | <a style="color:LightYellow">Yellow color Message</a> |
 | "ERRROR"  | <a style="color:LightRed">Red color Message</a>       |
 
