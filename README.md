@@ -34,31 +34,67 @@ This resource is still on develop so many code lines are going to change.
 On the **meta.xml** file, the Resource exports a function that we can call from another Resource.
 
 ```lua
-    --- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
-    exports["[tooltip]"]:showTooltip(message,type_tooltip)
+--- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
+exports["[tooltip]"]:showTooltip(message,type_tooltip)
 ```
 
 To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource **_(Make sure that the lua file on the meta.xml is call like a type="Client")_**.
 
 ```lua
-    --- Where resource Is the name of the new Resource, message is Any text that you want to
-    --- show and the type_tooltip is the Type of the Tooltip Message
-    addEvent("resource-tooltip-browser:show", true)
-    addeEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
-        resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
-    end, true)
+--- Where resource Is the name of the new Resource, message is Any text that you want to
+--- show and the type_tooltip is the Type of the Tooltip Message
+addEvent("resource-tooltip-browser:show", true)
+addEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
+    resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
+end, true)
 ```
+
+# Example
+
+```lua
+    -- clientFile.lua
+    addEvent("serverFile-tooltip-browser:show", true)
+    addEventHandler("serverFile-tooltip-browser:show", root, function()
+        init_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
+    end,true)
+
+    -- serverFile.lua
+    triggerClientEvent(client,"serverFile-tooltip-browser:show",client, "All the resource works Fine!", "SUCCES")
+    triggerClientEvent(client,"serveerFile-tooltip-browser:show",client,"Follow me on Twitter @Synk_Kyonax", "INFO")
+```
+
+_If You are using JavaScript_
+
+<div>
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Succes.png">
+<br>
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Info.png">
+<br>
+</div>
+
+```js
+mta.triggerEvent(
+  "serverFile-tooltip-browser:show",
+  "I'm Using JavaScript!!!",
+  "WARNING"
+);
+```
+
+<div>
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Warning.png">
+<br>
+</div>
 
 ## Types of Tooltips
 
 You can show different Types of Tooltips with this resource, **_4 types_** at the moment.
 
-| Type      | Description                                      |
-| --------- | ------------------------------------------------ |
-| "SUCCES"  | <a style="color:green">Green color Message</a>   |
-| "INFO"    | <a style="color:blue">Blue color Message</a>     |
-| "WARNING" | <a style="color:yellow">Yellow color Message</a> |
-| "ERRROR"  | <a style="color:red">Red color Message</a>       |
+| Type      | Description          |
+| --------- | -------------------- |
+| "SUCCES"  | Green color Message  |
+| "INFO"    | Blue color Message   |
+| "WARNING" | Yellow color Message |
+| "ERRROR"  | Red color Message    |
 
 ## Developer
 
