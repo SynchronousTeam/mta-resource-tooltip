@@ -10,16 +10,16 @@ const = {
         H_BROWSER = 1,
         TITLE_SIZE = 0
     },
-    time = {LOAD_DELAY = 130, TOOLTIP_DURATION = 3500},
+    time = {LOAD_DELAY = 300, TOOLTIP_DURATION = 3500},
     type = {
         SUCCES = "2",
         WARNING = "3",
         INFO = "4",
         ERROR = "5",
-        "0",
         "1",
         "2",
-        "3"
+        "3",
+        "4"
     }
 }
 --- GUI Init
@@ -94,46 +94,4 @@ function showTooltip(message, type_tooltip)
             end, 6000, 1)
         end, const.time.LOAD_DELAY, 1)
     end
-end
-
-function showTooltipWarning(message)
-    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-        createBrowserTooltipGUI()
-        setTimer(function() deleteBrowserTooltipGUI() end,
-                 const.time.TOOLTIP_DURATION, 1)
-    end
-    setTimer(function()
-        executeBrowserJavascript(BROWSER_TOOLTIP,
-                                 "document.querySelector('.error:nth-child(3)').innerHTML = '" ..
-                                     message ..
-                                     "'; document.querySelector('.error:nth-child(3)').style = 'display: initial'");
-    end, const.time.LOAD_DELAY, 1)
-end
-
-function showTooltipInfo(message)
-    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-        createBrowserTooltipGUI()
-        setTimer(function() deleteBrowserTooltipGUI() end,
-                 const.time.TOOLTIP_DURATION, 1)
-    end
-    setTimer(function()
-        executeBrowserJavascript(BROWSER_TOOLTIP,
-                                 "document.querySelector('.error:nth-child(4)').innerHTML = '" ..
-                                     message ..
-                                     "'; document.querySelector('.error:nth-child(4)').style = 'display: initial'");
-    end, const.time.LOAD_DELAY, 1)
-end
-
-function showTooltipSucces(message)
-    if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-        createBrowserTooltipGUI()
-        setTimer(function() deleteBrowserTooltipGUI() end,
-                 const.time.TOOLTIP_DURATION, 1)
-    end
-    setTimer(function()
-        executeBrowserJavascript(BROWSER_TOOLTIP,
-                                 "document.querySelector('.error:nth-child(2)').innerHTML = '" ..
-                                     message ..
-                                     "'; document.querySelector('.error:nth-child(2)').style = 'display: initial'");
-    end, const.time.LOAD_DELAY, 1)
 end
