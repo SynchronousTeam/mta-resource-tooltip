@@ -4,22 +4,22 @@
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
-<img src="https://img.shields.io/github/languages/count/SynchronousTeam/mta-resource-init">
+<img src="https://img.shields.io/github/license/SynchronousTeam/mta-resource-init">
 </a>
-<a href="https://discord.gg/vSvgHvk"style="text-decoration: none">
-<img src="https://img.shields.io/discord/623715606184722442?color=blueviolet&label=Server&logo=discord">
+<a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
+<img src="https://img.shields.io/github/languages/count/SynchronousTeam/mta-resource-init">
 </a>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5LY2Y46Q7DSWL&source=url"style="text-decoration: none">
 <img src="https://img.shields.io/badge/Donate-PayPal-green.svg">
-</a>  
- <a href="https://www.facebook.com/SynchronousTeam"style="text-decoration: none">
-<img src="https://img.shields.io/badge/Synchronous-facebook-blue">
 </a>
 <a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
 <img src="https://img.shields.io/github/repo-size/SynchronousTeam/mta-resource-init">
 </a>
-<a href="https://github.com/SynchronousTeam/mta-resource-init"style="text-decoration: none">
-<img src="https://img.shields.io/github/license/SynchronousTeam/mta-resource-init">
+<a href="https://www.facebook.com/SynchronousTeam"style="text-decoration: none">
+<img src="https://img.shields.io/badge/Synchronous-facebook-blue">
+</a>
+<a href="https://discord.gg/vSvgHvk"style="text-decoration: none">
+<img src="https://img.shields.io/discord/623715606184722442?color=blueviolet&label=Server&logo=discord">
 </a>
 </p>
 
@@ -38,10 +38,10 @@ On the **meta.xml** file, the Resource exports a function that we can call from 
     exports["[tooltip]"]:showTooltip(message,type_tooltip)
 ```
 
-To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource _(Make sure that the lua file on the meta.xml call is type="Client")_.
+To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource **_(Make sure that the lua file on the meta.xml call is type="Client")_**.
 
 ```lua
-    --- Where resource Is the name of the new Resource, message is Any text that you want to 
+    --- Where resource Is the name of the new Resource, message is Any text that you want to
     --- show and the type_tooltip is the Type of the Tooltip Message
     addEvent("resource-tooltip-browser:show", true)
     addeEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
@@ -51,7 +51,7 @@ To use this correctly on another Resource you need to create a _`Client Event`_,
 
 ## Types of Tooltips
 
-You can show different Types of Tooltips with this resource, at the moment you can show _4 types_.
+You can show different Types of Tooltips with this resource, _4 types_ at the moment.
 
 | Type      | Description          |
 | --------- | -------------------- |
