@@ -68,9 +68,12 @@ triggerClientEvent(client,"serveerFile-tooltip-browser:show",client,"Follow me o
 <br>
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Info.png">
 <br>
+<br>
 </div>
 
-_If You are using JavaScript_
+
+
+Or **_If You are using JavaScript_**
 
 ```js
 mta.triggerEvent(
