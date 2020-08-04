@@ -10,7 +10,7 @@ const = {
         H_BROWSER = 1,
         TITLE_SIZE = 0
     }, -- All the Avaible Sizes for the GUI of this Resource
-    time = {LOAD_DELAY = 300, TOOLTIP_DURATION = 3500, TOOLTIP_STOPWATCH = 6000}, -- Usefull global Timer variables | Delay for Wait, Duration to Stay & StopWatch to Excute
+    time = {LOAD_DELAY = 300, TOOLTIP_DURATION = 3600, TOOLTIP_STOPWATCH = 6000}, -- Usefull global Timer variables | Delay for Wait, Duration to Stay & StopWatch to Excute
     type = {
         SUCCES = "2",
         WARNING = "3",

@@ -25,7 +25,7 @@
 
 ---
 
-**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Player Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
+**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Player Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
 
 This resource is still on develop so many code lines are going to change.
 
@@ -55,7 +55,7 @@ end, true)
 -- clientFile.lua
 addEvent("serverFile-tooltip-browser:show", true)
 addEventHandler("serverFile-tooltip-browser:show", root, function()
-    init_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
+    mta_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
 end,true)
 
 -- serverFile.lua
@@ -71,11 +71,10 @@ triggerClientEvent(client,"serveerFile-tooltip-browser:show",client,"Follow me o
 <br>
 </div>
 
-
-
 Or **_If You are using JavaScript_**
 
 ```js
+// Form.js
 mta.triggerEvent(
   "serverFile-tooltip-browser:show",
   "Im Using JavaScript!!!",
