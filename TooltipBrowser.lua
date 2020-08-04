@@ -53,10 +53,7 @@ function deleteBrowserTooltipGUI()
 end -- This function removes the Browser GUI
 
 function sendScriptBrowserTooltip(message, type_tooltip)
-    -- FIXME: Try to get the size of the Constructor       
-    outputConsole("Size of the Type: " .. table.getn(const.type))
     for i = 1, table.getn(const.type) do
-        outputConsole("Number: " .. i .. " Type: " .. const.type[type_tooltip])
         if not i == tonumber(const.type[type_tooltip]) then
             outputConsole("Removing: " .. i)
             executeBrowserJavascript(BROWSER_TOOLTIP,
@@ -64,13 +61,15 @@ function sendScriptBrowserTooltip(message, type_tooltip)
                                          i .. ")').style = 'display: none'")
         end
     end
-    executeBrowserJavascript(BROWSER_TOOLTIP,
-                             "document.querySelector('.error:nth-child(" ..
-                                 const.type[type_tooltip] .. ")').innerHTML = '" ..
-                                 message ..
-                                 "'; document.querySelector('.error:nth-child(" ..
-                                 const.type[type_tooltip] ..
-                                 ")').style = 'display: initial'")
+    setTimer(function()
+        executeBrowserJavascript(BROWSER_TOOLTIP,
+                                 "document.querySelector('.error:nth-child(" ..
+                                     const.type[type_tooltip] ..
+                                     ")').innerHTML = '" .. message ..
+                                     "'; document.querySelector('.error:nth-child(" ..
+                                     const.type[type_tooltip] ..
+                                     ")').style = 'display: initial'")
+    end, const.time.LOAD_DELAY, 1)
 end
 
 function showTooltip(message, type_tooltip)
