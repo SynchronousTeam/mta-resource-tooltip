@@ -41,7 +41,8 @@ On the **meta.xml** file, the Resource exports a function that we can call from 
 To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource _(Make sure that the lua file on the meta.xml call is type="Client")_.
 
 ```lua
-    --- Where resource Is the name of the new Resource, message is Any text that you want to show and the type_tooltip is the Type of the Tooltip Message
+    --- Where resource Is the name of the new Resource, message is Any text that you want to 
+    --- show and the type_tooltip is the Type of the Tooltip Message
     addEvent("resource-tooltip-browser:show", true)
     addeEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
         resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
