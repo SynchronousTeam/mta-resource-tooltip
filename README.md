@@ -38,7 +38,7 @@ On the **meta.xml** file, the Resource exports a function that we can call from 
     exports["[tooltip]"]:showTooltip(message,type_tooltip)
 ```
 
-To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource **_(Make sure that the lua file on the meta.xml call is type="Client")_**.
+To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource **_(Make sure that the lua file on the meta.xml is call like a type="Client")_**.
 
 ```lua
     --- Where resource Is the name of the new Resource, message is Any text that you want to
@@ -51,14 +51,14 @@ To use this correctly on another Resource you need to create a _`Client Event`_,
 
 ## Types of Tooltips
 
-You can show different Types of Tooltips with this resource, _4 types_ at the moment.
+You can show different Types of Tooltips with this resource, **_4 types_** at the moment.
 
-| Type      | Description          |
-| --------- | -------------------- |
-| "SUCCES"  | Green color Message  |
-| "INFO"    | Blue color Message   |
-| "WARNING" | Yellow color Message |
-| "ERRROR"  | Red color Message    |
+| Type      | Description                                           |
+| --------- | ----------------------------------------------------- |
+| "SUCCES"  | <a style="color:LightGreen">Green color Message</a>   |
+| "INFO"    | <a style="color:LightBlue">Blue color Message</>      |
+| "WARNING" | <a style="color:LightYellow">Yellow color Message</a> |
+| "ERRROR"  | <a style="color:LightRed">Red color Message</a>       |
 
 ## Developer
 
