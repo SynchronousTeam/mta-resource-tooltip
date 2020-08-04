@@ -1,5 +1,5 @@
 <meta>
-    <info type="script" name="tooltip" description="Message and Information System" author="Kyonax" version="1.0.0" />
+    <info type="script" name="tooltip" description="Display Messages and Tips on the Screen | Running on Lua - HTML - CSS - JavaScript" author="Kyonax - Cristian Moreno" version="1.1.0" />
     <!--TOOLTIPS-->
     <!--Scripts Tooltip GUI Connection-->
     <script src="TooltipBrowser.lua" type="client"></script>

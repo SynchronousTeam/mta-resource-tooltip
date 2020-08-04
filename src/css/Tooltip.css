@@ -1,16 +1,15 @@
 /*
 ---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
 ---|                                                                               |---
----|              CSS-Code by "Pixxa & Kyonax" Synchronous Developers              |---
+---|                   CSS-Code by "Kyonax" Synchronous Developers                 |---
 ---|       Github: https://github.com/Kyonax • G-Mail: kyonax.corp@gmail.com       |---
----|  Github: https://github.com/MrPixxa-games • G-Mail: pixxaunited@gmail.com     |---
 ---|                       code CSS from Montgomery Country RP                     |---
 ---|                               Resource-CSS: [init]                            |---
 ---|                               Name-CSS: [Tooltip]                             |---
----|             Function-CSS: Create the base to some Tooltips messages           |---
+---|             Function-CSS: Give Styles for all the Tooltips messages           |---
 ---|                                                                               |---
 ---|                            DEV-DATE: 23/07/2020                               |---
----|                                number: 001                                    |---
+---|                                number: 002                                    |---
 ---|                                MIT License                                    |---
 ---|                                                                               |---
 ---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
@@ -19,7 +18,7 @@
 .container_tooltip {
   text-align: center !important;
   background-color: none !important;
-}
+}  /*Center and Remove de Background to the Tooltips Container*/
 
 .error {
   position: relative;
