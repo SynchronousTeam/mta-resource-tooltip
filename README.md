@@ -68,7 +68,7 @@ _If You are using JavaScript_
 <div>
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Succes.png">
 <br>
-<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Info.png">
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Info.png">
 <br>
 </div>
 
