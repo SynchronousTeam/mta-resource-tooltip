@@ -1,6 +1,6 @@
 # Resource Tooltip
 
-<p align="center">
+<div align="center" style="display:inline">
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
@@ -21,13 +21,27 @@
 <a href="https://discord.gg/vSvgHvk"style="text-decoration: none">
 <img src="https://img.shields.io/discord/623715606184722442?color=blueviolet&label=Server&logo=discord">
 </a>
-</p>
+</div>
 
 ---
 
 **MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Client Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
 
 _This resource is still on develop so many code lines are going to change._
+
+## Download
+
+If you want to download, learn and use this Resource follow the nex steps. **_(You can read, learn and share the code however you can´t appropiatte it. If you are going to share the code or modify please give me Credits, more information in [License MIT](LICENSE) _**
+
+> • Create a Folder in the /Resources path of your Server, this name is going to be the Resource name
+> • Copy the Github path of this resource, and then clone the repository in your Resource Folder
+
+###### Via Console
+
+```Console
+C:\Users\Your_User\Your_Documents> mkdir resourceName
+C:\Users\Your_User\Your_Documents\resourceName> git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
+```
 
 ## How to Use
 
@@ -95,7 +109,7 @@ You can show different Types of Tooltips with this resource, **_4 types_** at th
 | "WARNING" | Yellow color Message |
 | "ERRROR"  | Red color Message    |
 
-## Developer
+## Developers
 
 **Synchronous Developers** are working on this repository, if you want know a little more about the team, you can follow them on their each social media.
 
@@ -109,7 +123,9 @@ You can show different Types of Tooltips with this resource, **_4 types_** at th
 
 ## Support
 
-We do our best on every single app, if you want to learn with us and then **Support us** you can check out the links below.
+We do our best on every single app, if you want to learn with us and **Support us** you can check out the links below.
+
+###### Synchronous
 
 - [**FaceBook**](https://www.facebook.com/SynchronousTeam)
 - [**Donations**](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5LY2Y46Q7DSWL&source=url)
