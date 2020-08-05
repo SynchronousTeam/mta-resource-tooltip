@@ -1,6 +1,6 @@
 # Resource Tooltip
 
-<div align="center" style="display:inline">
+<div style="text-align:justify;display:inline-block">
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
@@ -21,6 +21,7 @@
 <a href="https://discord.gg/vSvgHvk"style="text-decoration: none">
 <img src="https://img.shields.io/discord/623715606184722442?color=blueviolet&label=Server&logo=discord">
 </a>
+
 </div>
 
 ---
@@ -31,7 +32,7 @@ _This resource is still on develop so many code lines are going to change._
 
 ## Download
 
-If you want to download, learn and use this Resource follow the nex steps. **_(You can read, learn and share the code however you can't appropiatte it. If you are going to share the code or modify please give me Credits, more information in [License MIT](LICENSE)_**
+If you want to download, learn and use this Resource follow the nex steps. **_(You can read, learn and share the code however you can't appropiatte it. If you are going to share the code or modify please give me Credits, more information in [License MIT](LICENSE))_**
 
 > Create a Folder in the /Resources path of your Server, this name is going to be the Resource name. Now
 > copy the Github path of this resource, and then clone the repository in your Resource Folder.
