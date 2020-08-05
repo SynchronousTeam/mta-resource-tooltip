@@ -21,7 +21,6 @@
 <a href="https://discord.gg/vSvgHvk"style="text-decoration: none">
 <img src="https://img.shields.io/discord/623715606184722442?color=blueviolet&label=Server&logo=discord">
 </a>
-
 </div>
 
 ---
