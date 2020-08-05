@@ -31,10 +31,10 @@ _This resource is still on develop so many code lines are going to change._
 
 ## Download
 
-If you want to download, learn and use this Resource follow the nex steps. **_(You can read, learn and share the code however you can´t appropiatte it. If you are going to share the code or modify please give me Credits, more information in [License MIT](LICENSE) _**
+If you want to download, learn and use this Resource follow the nex steps. **_(You can read, learn and share the code however you can't appropiatte it. If you are going to share the code or modify please give me Credits, more information in [License MIT](LICENSE)_**
 
-> • Create a Folder in the /Resources path of your Server, this name is going to be the Resource name
-> • Copy the Github path of this resource, and then clone the repository in your Resource Folder
+> Create a Folder in the /Resources path of your Server, this name is going to be the Resource name. Now
+> copy the Github path of this resource, and then clone the repository in your Resource Folder.
 
 ###### Via Console
 
