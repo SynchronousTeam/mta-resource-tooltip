@@ -42,6 +42,12 @@ If you want to download, learn and use this Resource follow the nex steps. **_(Y
 C:\Users\Your_User\Your_Documents> mkdir resourceName
 C:\Users\Your_User\Your_Documents\resourceName> git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
 ```
+> Now put this current lines of code at the bottom of the mtaserver.conf File, changing the _"[tooltip]"_ 
+> for your Current resource name.
+
+```xml
+<resource src="[tooltip]" startup="1" protected="0"/>
+```
 
 ## How to Use
 
