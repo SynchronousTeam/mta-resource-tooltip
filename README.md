@@ -1,6 +1,7 @@
 # Resource Tooltip
 
-<div style="display:flex;justify-content:space-between">
+<div align="center">
+<p style="display:flex;justify-content:space-between">
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
@@ -21,6 +22,7 @@
 <a href="https://discord.gg/vSvgHvk"style="text-decoration: none">
 <img src="https://img.shields.io/discord/623715606184722442?color=blueviolet&label=Server&logo=discord">
 </a>
+</p>
 </div>
 
 ---
