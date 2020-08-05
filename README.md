@@ -1,6 +1,6 @@
 # Resource Tooltip
 
-<div style="text-align:justify;display:inline-block">
+<div style="display:flex;justify-content:space-between">
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
