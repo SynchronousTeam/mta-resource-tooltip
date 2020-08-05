@@ -88,14 +88,12 @@ mta.triggerEvent(
 
 You can show different Types of Tooltips with this resource, **_4 types_** at the moment.
 
-<div align="center">
 | Type      | Description          |
 | --------- | -------------------- |
 | "SUCCES"  | Green color Message  |
 | "INFO"    | Blue color Message   |
 | "WARNING" | Yellow color Message |
 | "ERRROR"  | Red color Message    |
-</div>
 
 ## Developer
 
