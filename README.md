@@ -48,15 +48,15 @@ C:\Users\Your_User\Your_Documents\resourceName> git clone https://github.com/Syn
 On the **meta.xml** file, the Resource exports a function that we can call from another Resource.
 
 ```lua
---- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
+-- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
 exports["[tooltip]"]:showTooltip(message,type_tooltip)
 ```
 
 To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource **_(Make sure that the lua file on the meta.xml is call like a type="Client")_**.
 
 ```lua
---- Where resource Is the name of the new Resource, message is Any text that you want to
---- show and the type_tooltip is the Type of the Tooltip Message
+-- Where resource Is the name of the new Resource, message is Any text that you want to
+-- show and the type_tooltip is the Type of the Tooltip Message
 addEvent("resource-tooltip-browser:show", true)
 addEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
     resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
