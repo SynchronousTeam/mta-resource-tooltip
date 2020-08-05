@@ -64,10 +64,7 @@ triggerClientEvent(client,"serveerFile-tooltip-browser:show",client,"Follow me o
 ```
 
 <div>
-<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Succes.png">
-<br>
-<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Info.png">
-<br>
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Lua.png">
 <br>
 </div>
 
@@ -83,7 +80,7 @@ mta.triggerEvent(
 ```
 
 <div>
-<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Warning.png">
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Tooltip_Js.png">
 <br>
 </div>
 
@@ -91,12 +88,14 @@ mta.triggerEvent(
 
 You can show different Types of Tooltips with this resource, **_4 types_** at the moment.
 
+<div align="center">
 | Type      | Description          |
 | --------- | -------------------- |
 | "SUCCES"  | Green color Message  |
 | "INFO"    | Blue color Message   |
 | "WARNING" | Yellow color Message |
 | "ERRROR"  | Red color Message    |
+</div>
 
 ## Developer
 
