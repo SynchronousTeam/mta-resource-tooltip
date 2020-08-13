@@ -73,8 +73,8 @@ function sendScriptBrowserTooltip(message, type_tooltip)
 end -- Send a JavaScript instruction to the Browser | This Instruction deletes the previous Tooltips and Show a new one
 
 function showTooltip(message, type_tooltip)
-  query_content = executeBrowserJavascript(BROWSER_TOOLTIP,"document.querySelector('.error:nth-child("..const.type[type_tooltip]..")').innerHTML")
   if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
+    query_content =  message
     sendScriptBrowserTooltip(message,type_tooltip)
   else
     tooltip_content = message
@@ -86,7 +86,7 @@ function showTooltip(message, type_tooltip)
           outputConsole("Si son Iguales")
           deleteBrowserTooltipGUI()
         else
-          outputConsole("No son Iguales "..query_content.." otro "..tooltip_content)
+          outputConsole("No son Iguales ")
         end
       end,const.time.TOOLTIP_DURATION,1)
   end,const.time.LOAD_DELAY,1)
