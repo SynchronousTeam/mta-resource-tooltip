@@ -73,26 +73,22 @@ function sendScriptBrowserTooltip(message, type_tooltip)
 end -- Send a JavaScript instruction to the Browser | This Instruction deletes the previous Tooltips and Show a new one
 
 function showTooltip(message, type_tooltip)
-  -- FIXME: Time problems
-  outputConsole("Workin 2")
-  if dgsGetVisible(DGS_WINDOW_TOOLTIP) then 
+  query_content = executeBrowserJavascript(BROWSER_TOOLTIP,"document.querySelector('.error:nth-child("..const.type[type_tooltip]..")').innerHTML")
+  if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
     sendScriptBrowserTooltip(message,type_tooltip)
-    const.time.TOOLTIP_DURATION += const.time.TOOLTIP_DURATION
+  else
+    tooltip_content = message
+    createBrowserTooltipGUI()
     setTimer(function()
-      if dgsGetVisible(DGS_WINDOW_TOOLTIP) then 
-        deleteBrowserTooltipGUI()
-      end
-    end, const.time.TOOLTIP_DURATION, 1)
-else
-  outputConsole("Working")
-  createBrowserTooltipGUI()
-  setTimer(function() 
-    sendScriptBrowserTooltip(message,type_tooltip)
-    setTimer(function() 
-      if dgsGetVisible(DGS_WINDOW_TOOLTIP) then 
-        deleteBrowserTooltipGUI()
-      end
-    end, const.time.TOOLTIP_DURATION, 1)
-end, const.time.LOAD_DELAY,1)
+      sendScriptBrowserTooltip(message,type_tooltip)
+      setTimer(function()
+        if tooltip_content == query_content then
+          outputConsole("Si son Iguales")
+          deleteBrowserTooltipGUI()
+        else
+          outputConsole("No son Iguales "..query_content.." otro "..tooltip_content)
+        end
+      end,const.time.TOOLTIP_DURATION,1)
+  end,const.time.LOAD_DELAY,1)
 end
-  end -- Validate all the Posible Window Visible Status and execute the Script
+end -- Validate all the Posible Window Visible Status and execute the Script
