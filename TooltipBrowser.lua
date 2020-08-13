@@ -23,6 +23,8 @@ const = {
     "5"
   } -- Types of Tooltips 
 } -- Lua Constructor for easy acces and Variable storage
+query_content = nil
+tooltip_content = nil
 --- GUI Init
 URL_PAGE_TOOLTIP = "http://mta/[tooltip]/src/tooltip.html" -- Location of the HTML File (global)
 DGS_WINDOW_TOOLTIP = dgsCreateWindow(const.position.NONE, const.position.NONE,
@@ -53,6 +55,16 @@ function deleteBrowserTooltipGUI()
   end
 end -- Removing GUI Function | Hidde the DGS Window when this is Visible
 
+function delayBrowserTooltipGUI(message)
+  setTimer(function()
+    if rawget(tooltip_content) == rawget(query_content) then
+      deleteBrowserTooltipGUI()
+    else
+      rawset(tooltip_content,message)
+    end
+  end,const.time.TOOLTIP_DURATION,1)
+end
+
 function sendScriptBrowserTooltip(message, type_tooltip)
   for i = 2, table.getn(const.type) do
     if i ~= tonumber(const.type[type_tooltip]) then
@@ -73,22 +85,16 @@ function sendScriptBrowserTooltip(message, type_tooltip)
 end -- Send a JavaScript instruction to the Browser | This Instruction deletes the previous Tooltips and Show a new one
 
 function showTooltip(message, type_tooltip)
+  rawset(query_content, message)
   if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-    query_content =  message
     sendScriptBrowserTooltip(message,type_tooltip)
   else
-    tooltip_content = message
+    rawset(tooltip_content, message)
     createBrowserTooltipGUI()
     setTimer(function()
       sendScriptBrowserTooltip(message,type_tooltip)
-      setTimer(function()
-        if tooltip_content == query_content then
-          outputConsole("Si son Iguales")
-          deleteBrowserTooltipGUI()
-        else
-          outputConsole("No son Iguales ")
-        end
-      end,const.time.TOOLTIP_DURATION,1)
-  end,const.time.LOAD_DELAY,1)
+      delayBrowserTooltipGUI(message)
+    end,const.time.LOAD_DELAY,1)
 end
 end -- Validate all the Posible Window Visible Status and execute the Script
+
