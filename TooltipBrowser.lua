@@ -10,7 +10,7 @@ const = {
     H_BROWSER = 1,
     TITLE_SIZE = 0
   }, -- All the Avaible Sizes for the GUI of this Resource
-  time = {LOAD_DELAY = 300, TOOLTIP_DURATION = 3600, TOOLTIP_STOPWATCH = 6000}, -- Usefull global Timer variables | Delay for Wait, Duration to Stay & StopWatch to Excute
+  time = {LOAD_DELAY = 300, TOOLTIP_DURATION = 9000}, -- Usefull global Timer variables | Delay for Wait, Duration to Stay & StopWatch to Excute
   type = {
     SUCCES = "2",
     WARNING = "3",
@@ -73,26 +73,26 @@ function sendScriptBrowserTooltip(message, type_tooltip)
 end -- Send a JavaScript instruction to the Browser | This Instruction deletes the previous Tooltips and Show a new one
 
 function showTooltip(message, type_tooltip)
-  --- FIXME: Time problems
-  if dgsGetVisible(DGS_WINDOW_TOOLTIP) then end
-  sendScriptBrowserTooltip(message, type_tooltip)
-  setTimer(function()
-    if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-      setTimer(function() deleteBrowserTooltipGUI() end,
-        const.time.TOOLTIP_STOPWATCH, 1)
-    end
-  end, const.time.TOOLTIP_STOPWATCH, 1)
-if not dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-  createBrowserTooltipGUI()
-  setTimer(function()
-    sendScriptBrowserTooltip(message, type_tooltip)
+  -- FIXME: Time problems
+  outputConsole("Workin 2")
+  if dgsGetVisible(DGS_WINDOW_TOOLTIP) then 
+    sendScriptBrowserTooltip(message,type_tooltip)
+    const.time.TOOLTIP_DURATION += const.time.TOOLTIP_DURATION
     setTimer(function()
-      if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
-        setTimer(function()
-          deleteBrowserTooltipGUI()
-        end, const.time.TOOLTIP_STOPWATCH, 1)
-    end
-  end, const.time.TOOLTIP_STOPWATCH, 1)
-        end, const.time.LOAD_DELAY, 1)
-    end
+      if dgsGetVisible(DGS_WINDOW_TOOLTIP) then 
+        deleteBrowserTooltipGUI()
+      end
+    end, const.time.TOOLTIP_DURATION, 1)
+else
+  outputConsole("Working")
+  createBrowserTooltipGUI()
+  setTimer(function() 
+    sendScriptBrowserTooltip(message,type_tooltip)
+    setTimer(function() 
+      if dgsGetVisible(DGS_WINDOW_TOOLTIP) then 
+        deleteBrowserTooltipGUI()
+      end
+    end, const.time.TOOLTIP_DURATION, 1)
+end, const.time.LOAD_DELAY,1)
+end
   end -- Validate all the Posible Window Visible Status and execute the Script
