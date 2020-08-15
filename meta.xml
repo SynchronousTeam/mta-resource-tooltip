@@ -1,17 +1,22 @@
 <meta>
-    <info type="script" name="tooltip" description="Display Messages and Tips on the Screen | Running on Lua - HTML - CSS - JavaScript" author="Kyonax - Cristian Moreno" version="1.1.0" />
+  <info type="script" name="tooltip" description="Display Messages and Tips on the Screen | Running on Lua - HTML - CSS - JavaScript" author="Kyonax - Cristian Moreno" version="1.1.0" />
     <!--TOOLTIPS-->
     <!--Scripts Tooltip GUI Connection-->
-    <script src="TooltipBrowser.lua" type="client"></script>
+  <script src="TooltipBrowser.lua" type="client"></script>
     <!--Import of HTML, CSS and JS Files-->
-    <file src="src/tooltip.html"></file>
+  <file src="src/tooltip.html"></file>
     <!--CSS-->
-    <file src="src/css/Tooltip.css"></file>
-    <file src="src/css/Body.css"></file>
+  <file src="src/css/Tooltip.css"></file>
+  <file src="src/css/Body.css"></file>
     <!--Import of respective files Fonts - CSS-->
-    <file src="src/css/Titillium-Web.css"></file>
-    <file src="src/fonts/TitilliumWeb-Bold.ttf"></file>
+  <file src="src/css/Titillium-Web.css"></file>
+  <file src="src/fonts/TitilliumWeb-Bold.ttf"></file>
     <!--Export Tooltip Functions-->
-    <export function="showTooltip" type="client"></export>
-    <export function="deleteBrowserTooltipGUI" type="client"></export>
+  <export function="showTooltip" type="client"></export>
+  <export function="deleteBrowserTooltipGUI" type="client"></export>
+  <!--Getters and Setters-->
+  <export function="getQueryContent" type="client"></export>
+  <export function="getTooltipContent" type="client"></export>
+  <export function="setQueryContent" type="client"></export>
+  <export function="setTooltipContent" type="client"></export>
 </meta>

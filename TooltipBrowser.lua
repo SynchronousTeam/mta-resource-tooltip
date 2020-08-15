@@ -1,3 +1,18 @@
+---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
+---|                                                                               |---
+---|         Script by "Kyonax - Pilar Perfeccionista" Synchronous member          |---
+---|       Github: https://github.com/Kyonax • G-Mail: kyonax.corp@gmail.com       |---
+---|                     Code Script from Montgomery Country RP                    |---
+---|                            Resource-Script: [tooltip]                         |---
+---|                           Name-Script: [TooltipBrowser]                       |---
+---|         Function-Script: Catch messages and show them like tooltips.          |---
+---|                                                                               |---
+---|                            DEV-DATE: 14/08/2020                               |---
+---|                               Client Script                                   |---
+---|                                number: 001                                    |---
+---|                                MIT License                                    |---
+---|                                                                               |---
+---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---•---
 --- Client Variables
 event = {add = addEventHandler, load = addEvent, execute = triggerServerEvent} -- Make simple calls for addEvent and triggerServerEvent by the variable event
 loadstring(exports.dgs:dgsImportFunction())() -- Load all the functions from the DGS Resource
@@ -23,6 +38,7 @@ const = {
     "5"
   } -- Types of Tooltips 
 } -- Lua Constructor for easy acces and Variable storage
+-- Global and not Constant Varibles
 query_content = nil
 tooltip_content = nil
 --- GUI Init
@@ -66,7 +82,7 @@ function delayBrowserTooltipGUI()
       delayBrowserTooltipGUI()
     end
   end,const.time.TOOLTIP_DURATION,1)
-end
+end -- Verify if the Message has to take off 
 
 function sendScriptBrowserTooltip(message, type_tooltip)
   for i = 2, table.getn(const.type) do
@@ -103,17 +119,17 @@ end -- Validate all the Posible Window Visible Status and execute the Script
 
 function getQueryContent()
   return query_content
-end
+end -- Give the content of the actual Label
 
 function getTooltipContent()
   return tooltip_content
-end
+end -- Give the content of the Original Label
 
 function setQueryContent(content)
   query_content = content
-end
+end -- Change the content of the Actual Label
 
 function setTooltipContent(content)
   tooltip_content = content
-end
+end -- Change the content of the Original Label
 
