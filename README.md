@@ -29,8 +29,6 @@
 
 **MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Client Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
 
-_This resource is still on develop so many code lines are going to change._
-
 ## Download
 
 If you want to download, learn and use this Resource follow the nex steps. **_(You can read, learn and share the code however you can't appropiatte it. If you are going to share the code or modify please give me Credits, more information in [License MIT](LICENSE))_**
@@ -38,17 +36,30 @@ If you want to download, learn and use this Resource follow the nex steps. **_(Y
 > Create a Folder in the /Resources path of your Server, this name is going to be the Resource name. Now
 > copy the Github path of this resource, and then clone the repository in your Resource Folder.
 
-###### Via Console
+##### Via Console
+
+###### Windows
 
 ```Console
-C:\Users\Your_User\Your_Documents> mkdir resourceName
-C:\Users\Your_User\Your_Documents\resourceName> git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
+cd 'C:\Program Files (x86)\MTA San Andreas 1.5\mods\deathmatch\resources'
+mkdir resourceName
+cd .\resourceName\
+git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
 ```
 
-> Now put this current lines of code at the bottom of the mtaserver.conf File, changing the _"[tooltip]"_
+##### Linux
+
+```Terminal
+mkdir ~/.MTA San Andreas 1.5/server/mods/deathmatch/resources resourceName
+cd ~/.MTA San Andreas 1.5/server/mods/deathmatch/resources
+git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
+
+```
+
+> Now put this current lines of code at the bottom of the **mtaserver.conf** File, changing the _"[tooltip]"_
 > for your Current resource name.
 
-###### \deathmatch\mtaserver.conf
+###### .\deathmatch\mtaserver.conf
 
 ```xml
 <resource src="[tooltip]" startup="1" protected="0"/>
@@ -56,7 +67,22 @@ C:\Users\Your_User\Your_Documents\resourceName> git clone https://github.com/Syn
 
 ## How to Use
 
-On the **meta.xml** file, the Resource exports a function that we can call from another Resource.
+On the **meta.xml** file, the Resource exports some functions that we can call from another Resource.
+
+###### Exported Functions
+
+```xml
+<!--Export Tooltip Functions-->
+<export function="showTooltip" type="client"></export>
+<export function="deleteBrowserTooltipGUI" type="client"></export>
+<!--Getters and Setters-->
+<export function="getQueryContent" type="client"></export>
+<export function="getTooltipContent" type="client"></export>
+<export function="setQueryContent" type="client"></export>
+<export function="setTooltipContent" type="client"></export>
+```
+
+###### Call
 
 ```lua
 -- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
@@ -70,7 +96,7 @@ To use this correctly on another Resource you need to create a _`Client Event`_,
 -- show and the type_tooltip is the Type of the Tooltip Message
 addEvent("resource-tooltip-browser:show", true)
 addEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
-    resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
+resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
 end, true)
 ```
 
@@ -80,7 +106,7 @@ end, true)
 -- clientFile.lua
 addEvent("serverFile-tooltip-browser:show", true)
 addEventHandler("serverFile-tooltip-browser:show", root, function()
-    mta_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
+mta_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
 end,true)
 
 -- serverFile.lua
@@ -109,9 +135,9 @@ mta.triggerEvent(
 <br>
 </div>
 
-## Types of Tooltips
+## Kinds of Tooltips
 
-You can show different Types of Tooltips with this resource, **_4 types_** at the moment.
+You can show different Kinds of Tooltips with this resource, **_4 types_** at the moment.
 
 | Type      | Description          |
 | --------- | -------------------- |
@@ -126,6 +152,8 @@ You can show different Types of Tooltips with this resource, **_4 types_** at th
 
 ###### Kyonax
 
+###### Only One Member of the Team worked on this Repository
+
 - [**FaceBook**](https://www.facebook.com/MrKyonax)
 - [**Twitter**](https://twitter.com/Synk_Kyo)
 - [**Twitch**](https://www.twitch.tv/synk_kyonax)
@@ -134,7 +162,7 @@ You can show different Types of Tooltips with this resource, **_4 types_** at th
 
 ## Support
 
-We do our best on every single app, if you want to learn with us and **Support us** you can check out the links below.
+We do our best on every single app, if you want to learn with us, and **Support us**, you can check out the links below.
 
 ###### Synchronous
 
