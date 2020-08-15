@@ -5,7 +5,7 @@
 <img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png"style="text-decoration: none">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
-<img src="https://img.shields.io/github/license/Synchronousream/mta-resource-tooltip">
+<img src="https://img.shields.io/github/license/Synchronousteam/mta-resource-tooltip">
 </a>
 <a href="https://github.com/Synchronousneam/mta-resource-tooltip"style="text-decoration: none">
 <img src="https://img.shields.io/github/languages/count/SynchronousTeam/mta-resource-tooltip">
