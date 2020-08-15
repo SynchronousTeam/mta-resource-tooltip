@@ -27,7 +27,7 @@
 
 ---
 
-**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for a Multi Theft Auto server developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Client Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
+**MTA Resource Tooltip** is an Open-Source GUI/Lua Connection for Multi Theft Auto, developed on **_HTML, CSS, JavaScript_ and _Lua_**. The principal function for this resource is **Receive Messages** from another Resources and shows them like `SUCCES - INFO - WARNING - ERROR` Tooltips into the Client Screen, all this stuff running on **Montgomery Country RP** a MTA Server developed by **Kyonax, Pixxa and Thrizz, members of Synchronous**.
 
 ## Download
 
@@ -137,9 +137,9 @@ mta.triggerEvent(
 
 ## Kinds of Tooltips
 
-You can show different Kinds of Tooltips with this resource, **_4 types_** at the moment.
+You can show different Kinds of Tooltips with this resource, **_4 kinds_** added at the moment.
 
-| Type      | Description          |
+| Kind      | Description          |
 | --------- | -------------------- |
 | "SUCCES"  | Green color Message  |
 | "INFO"    | Blue color Message   |
@@ -150,9 +150,7 @@ You can show different Kinds of Tooltips with this resource, **_4 types_** at th
 
 **Synchronous Developers** are working on this repository, if you want know a little more about the team, you can follow them on their each social media.
 
-###### Kyonax
-
-###### Only One Member of the Team worked on this Repository
+###### Only One Member of the Team worked on this Repository - Kyonax
 
 - [**FaceBook**](https://www.facebook.com/MrKyonax)
 - [**Twitter**](https://twitter.com/Synk_Kyo)
