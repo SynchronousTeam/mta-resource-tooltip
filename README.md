@@ -2,12 +2,12 @@
 
 <div align="center">
 <p style="display:flex;justify-content:space-between">
-<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
+<img src="https://github.com/Synchronousneam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
-<img src="https://img.shields.io/github/license/SynchronousTeam/mta-resource-tooltip">
+<img src="https://img.shields.io/github/license/Synchronousream/mta-resource-tooltip">
 </a>
-<a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
+<a href="https://github.com/Synchronousneam/mta-resource-tooltip"style="text-decoration: none">
 <img src="https://img.shields.io/github/languages/count/SynchronousTeam/mta-resource-tooltip">
 </a>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5LY2Y46Q7DSWL&source=url"style="text-decoration: none">
@@ -49,7 +49,7 @@ git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
 
 ##### Linux
 
-```Terminal
+```Console
 mkdir ~/.MTA San Andreas 1.5/server/mods/deathmatch/resources resourceName
 cd ~/.MTA San Andreas 1.5/server/mods/deathmatch/resources
 git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
