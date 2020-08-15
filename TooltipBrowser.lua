@@ -74,10 +74,8 @@ end -- Removing GUI Function | Hidde the DGS Window when this is Visible
 function delayBrowserTooltipGUI()
   setTimer(function()
     if getTooltipContent() == getQueryContent() then
-      outputConsole("Son Iguales")
       deleteBrowserTooltipGUI()
     else
-      outputConsole("No Son Iguales")
       setTooltipContent(getQueryContent())
       delayBrowserTooltipGUI()
     end
@@ -103,7 +101,7 @@ function sendScriptBrowserTooltip(message, type_tooltip)
   end, const.time.LOAD_DELAY, 1)
 end -- Send a JavaScript instruction to the Browser | This Instruction deletes the previous Tooltips and Show a new one
 
-function showTooltip(message, type_tooltip)
+function showBrowserTooltipGUI(message, type_tooltip)
   setQueryContent(message)
   if dgsGetVisible(DGS_WINDOW_TOOLTIP) then
     sendScriptBrowserTooltip(message,type_tooltip)

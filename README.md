@@ -2,7 +2,7 @@
 
 <div align="center">
 <p style="display:flex;justify-content:space-between">
-<img src="https://github.com/Synchronousneam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png">
+<img src="https://github.com/SynchronousTeam/mta-resource-tooltip/blob/master/demo/image/Image_Resource_Tooltip.png"style="text-decoration: none">
 <br>
 <a href="https://github.com/SynchronousTeam/mta-resource-tooltip"style="text-decoration: none">
 <img src="https://img.shields.io/github/license/Synchronousream/mta-resource-tooltip">
@@ -47,7 +47,7 @@ cd .\resourceName\
 git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
 ```
 
-##### Linux
+###### Linux
 
 ```Console
 mkdir ~/.MTA San Andreas 1.5/server/mods/deathmatch/resources resourceName
@@ -62,7 +62,7 @@ git clone https://github.com/SynchronousTeam/mta-resource-tooltip.git
 ###### .\deathmatch\mtaserver.conf
 
 ```xml
-<resource src="[tooltip]" startup="1" protected="0"/>
+<resource src="[tooltip]" startup="1" protected="1"/>
 ```
 
 ## How to Use
@@ -73,7 +73,7 @@ On the **meta.xml** file, the Resource exports some functions that we can call f
 
 ```xml
 <!--Export Tooltip Functions-->
-<export function="showTooltip" type="client"></export>
+<export function="showBrowserTooltipGUI" type="client"></export>
 <export function="deleteBrowserTooltipGUI" type="client"></export>
 <!--Getters and Setters-->
 <export function="getQueryContent" type="client"></export>
@@ -86,7 +86,7 @@ On the **meta.xml** file, the Resource exports some functions that we can call f
 
 ```lua
 -- Where [tooltip] is the name of the Resource and showTooltip() the name of the Function
-exports["[tooltip]"]:showTooltip(message,type_tooltip)
+exports["[tooltip]"]:showBrowserTooltipGUI(message,type_tooltip)
 ```
 
 To use this correctly on another Resource you need to create a _`Client Event`_, and use this event into the new Resource **_(Make sure that the lua file on the meta.xml is call like a type="Client")_**.
@@ -96,7 +96,7 @@ To use this correctly on another Resource you need to create a _`Client Event`_,
 -- show and the type_tooltip is the Type of the Tooltip Message
 addEvent("resource-tooltip-browser:show", true)
 addEventHandler("resource-tooltip-browser:show", root, function(message, type_tooltip)
-resource_tooltip_type_send = exports["[tooltip]"]:showTooltip(message,type_tooltip)
+resource_tooltip_type_send = exports["[tooltip]"]:showBrowserTooltipGUI(message,type_tooltip)
 end, true)
 ```
 
@@ -106,7 +106,7 @@ end, true)
 -- clientFile.lua
 addEvent("serverFile-tooltip-browser:show", true)
 addEventHandler("serverFile-tooltip-browser:show", root, function()
-mta_tooltip_type_send = exports["mta-resource-tooltip"]:showTooltip(message, type_tooltip)
+mta_tooltip_type_send = exports["mta-resource-tooltip"]:showBrowserTooltipGUI(message, type_tooltip)
 end,true)
 
 -- serverFile.lua
