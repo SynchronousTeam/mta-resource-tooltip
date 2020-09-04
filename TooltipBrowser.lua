@@ -19,7 +19,7 @@ loadstring(exports.dgs:dgsImportFunction())() -- Load all the functions from the
 const = {
   position = {X_WINDOW = 0.5, Y_WINDOW = 0.988, NONE = 0}, -- All the Avaible Positions for the GUI of this Resource
   size = {
-    W_WINDOW = 0.25,
+    W_WINDOW = 0.50,
     H_WINDOW = 0.12,
     W_BROWSER = 1,
     H_BROWSER = 1,
